@@ -8,7 +8,7 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: background-color;
 }
 
 #menu::before,
@@ -24,10 +24,36 @@
 #menu::before {
     left: 0;
     top: -20px;
+    transform: rotate(0deg);
+    transition: ease-in-out .5s;
 }
 
 #menu::after {
     left: 0;
     top: 20px;
+    transform: rotate(0deg);
+    transition: ease-in-out .5s;
 }
 
+#hamburgermenu #menu:hover::before {
+    transform: rotate(45deg);
+    transition: ease-in-out .5s;
+    top: 0;
+}
+
+#hamburgermenu #menu:hover::after {
+    transform: rotate(-45deg);
+    transition: ease-in-out .5s;
+    top: 0;
+}
+
+#hamburgermenu {
+    border: transparent;
+    width: var(--menu-bar-width);
+    padding: 20px 0;
+}
+
+#hamburgermenu:hover #menu {
+    background-color: transparent;
+    transition: ease-in-out .01s;
+}
